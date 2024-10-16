@@ -6,14 +6,13 @@ const data = require('./data.js');
 const EmployeeDetails = require('./models/employeeSchema.js')
 
 const app = express();
-const PORT = process.env.PORT || 3100;
+const PORT = process.env.PORT || 0;
 const MONGO_URL = process.env.MONGO;
 
 app.set('view engine', "ejs");
 app.use(express.static('public'))
 app.use(express.urlencoded({extended : true}))
 app.use(bodyParser.urlencoded({extended:true}))
-
 
 mongoose.connect(MONGO_URL).then(()=>{
     console.log('DB connected ');
