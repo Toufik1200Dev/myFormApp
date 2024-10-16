@@ -5,8 +5,8 @@ const data = require('./data.js');
 const EmployeeDetails = require('./models/employeeSchema.js')
 
 const app = express();
-const PORT = 3200;
-const MONGO = 'mongodb+srv://rahmanitoufik1200:<toUfik99>@cluster123.pk8yy.mongodb.net/';
+const PORT = process.env.PORT || 3000;
+const MONGO = process.env.MONGODB_URI || 'mongodb://localhost:27017/employeeDB';
 
 app.set('view engine', "ejs");
 app.use(express.static('public'))
@@ -51,7 +51,7 @@ app.post('/app.js', async (req,res)=>{
     }   
 });
 
-app.listen(PORT,()=>{
-    console.log(`server running on : http://localhost:${PORT}/`);
-})
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on: http://localhost:${PORT}/`);
+  });
 
