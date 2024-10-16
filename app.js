@@ -1,4 +1,3 @@
-const dotenv = require('dotenv').config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
@@ -6,15 +5,15 @@ const data = require('./data.js');
 const EmployeeDetails = require('./models/employeeSchema.js')
 
 const app = express();
-const PORT = process.env.PORT || 0;
-const MONGO_URL = process.env.MONGO;
+const PORT = 3200;
+const MONGO = 'mongodb+srv://rahmanitoufik1200:<toUfik99>@cluster123.pk8yy.mongodb.net/';
 
 app.set('view engine', "ejs");
 app.use(express.static('public'))
 app.use(express.urlencoded({extended : true}))
 app.use(bodyParser.urlencoded({extended:true}))
 
-mongoose.connect(MONGO_URL).then(()=>{
+mongoose.connect(MONGO).then(()=>{
     console.log('DB connected ');
     
 }).catch(err=>console.log(err));
