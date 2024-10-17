@@ -20,8 +20,8 @@ const client = [
 
 const activity = [
     "Test reseau","Test logiciel", "Test Materiel",
-    "Devloppement(Dev)","Support client", "Drive",
-    "Preparation des slides","Redaction des rapport","Redaction des ModOp", 
+    "Développement(Dev)","Support client", "Drive",
+    "Préparation des slides","Redaction des rapport","Redaction des ModOp", 
     "Analyse des resultats", "Reunion interne", "Cordination avec fournisseur",
     "Planification des tests", "Maintenance", "Formation", "Veille technologique",
     "Audit interne/externe", 
