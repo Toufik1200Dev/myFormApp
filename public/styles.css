@@ -9,7 +9,9 @@ table {
     min-width: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
+label {
+    color: blue;
+}
 th, td {
     padding: 12px 15px;
     text-align: left;

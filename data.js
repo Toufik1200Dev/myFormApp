@@ -1,7 +1,7 @@
 const EmployeesNames = [
     "Amine",'Bader' ,'Béatrice' ,'Fodé' ,'Fortuney' ,
     'Hichem','Laurent','Masika', 'Najm',   
-    'Sonia' ,'Patrice' ,'william'
+    'Sonia' ,'Patrice' ,'william',"Adam"
 ];
 
 const Presence = [

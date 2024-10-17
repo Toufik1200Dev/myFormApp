@@ -11,7 +11,7 @@ const MONGO = process.env.MONGODB_URI || 'mongodb://localhost:27017/employeeDB';
 app.set('view engine', "ejs");
 app.use(express.static('public'))
 app.use(express.urlencoded({extended : true}))
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:true})) 
 
 mongoose.connect(MONGO).then(()=>{
     console.log('DB connected ');
@@ -41,6 +41,7 @@ app.post('/app.js', async (req,res)=>{
             Opportunité : req.body.Opportunité,
             opportunityDetails: req.body.opportunityDetails,
             PresenceEnJourne : req.body.PresenceEnJourne,
+            comment : req.body.comment
         }) 
         await newEmployee.save();
         res.render("successPage")

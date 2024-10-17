@@ -13,6 +13,7 @@ const EmployeeSchema = new Schema({
     Opportunité : String,
     opportunityDetails: String,
     PresenceEnJourne : Number,
+    comment: String
 });
 
 const EmployeeDetails = mongoose.model("Employee",EmployeeSchema);
