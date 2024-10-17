@@ -12,7 +12,7 @@
         <div class="options">
             <form action="/app.js" method="post">
                 <h3>la date d'aujourd'hui : <%= data.formattedDate  %></h3>
-                <label id="table-label" for="Employe">Choisisser le collaborateur : </label>
+                <label id="table-label" for="Employe">Le collaborateur : </label>
                 <br>
                 <select name="Employe" id="Employe" >    
                     <%data.EmployeesNames.forEach((name)=>{%>
@@ -20,23 +20,23 @@
                     <%})  %> 
                 </select><br>
 
-                <label id="table-label" for="presence">ta présence : </label>
+                <label id="table-label" for="presence">Ta présence : </label>
                 <br>
                 <select name="presence" id="presence" >    
                     <%data.Presence.forEach((name)=>{%>
                     <option value="<%= name  %>"><%= name %></option>  
                     <%})  %> 
                 </select><br>
-
-                <label id="table-label" for="client">nom de client : </label>
+                <label id="table-label" for="statut">Statut de travail: </label>
                 <br>
-                <select name="client" id="client" >    
-                    <%data.client.forEach((name)=>{%>
+                <select name="statut" id="statut" >    
+                    <%data.statut.forEach((name)=>{%>
                     <option value="<%= name  %>"><%= name %></option>  
                     <%})  %> 
                 </select><br>
+                
 
-                <label id="table-label" for="activity">ton activité actuelle : </label>
+                <label id="table-label" for="activity">Ton activité actuelle : </label>
                 <br>
                 <select name="activity" id="activity" >    
                     <%data.activity.forEach((name)=>{%>
@@ -64,10 +64,10 @@
                     <%})  %> 
                 </select><br>
 
-                <label id="table-label" for="statut">statut de travail: </label>
+                <label id="table-label" for="client">Nom de client : </label>
                 <br>
-                <select name="statut" id="statut" >    
-                    <%data.statut.forEach((name)=>{%>
+                <select name="client" id="client" >    
+                    <%data.client.forEach((name)=>{%>
                     <option value="<%= name  %>"><%= name %></option>  
                     <%})  %> 
                 </select><br>
@@ -84,7 +84,7 @@
                 <input type="number" name="PresenceEnJourne" min="0" max="12">
                 <br>
                 <label id="table-label" for="comment">Écris un commentaire :</label>
-                <input id="comment" type="text" placeholder="Écris ton commentaire ici ...." name="comment" height="80px" width="150px">
+                <input id="comment" type="text" placeholder="Écris ton commentaire ici ...." name="comment">
 
                 <button type="submit">Submit</button>
             </form>
@@ -96,24 +96,28 @@
         <table>
             <tr>
                 <th>Nom de l'employé</th>
+                <th>la Date</th>
                 <th>Presence</th>
-                <th>client</th>
+                <th>Status de travail</th>
                 <th>Activité</th>
                 <th>Problème Rencontré</th>
-                <th>status</th>
+                <th>client</th>
                 <th>Fournisseur</th>
-                <th>la Date</th>
+                <th>Présence en journée</th>
+                
             </tr>
             <% employees.forEach(employee => { %>
                 <tr>
                     <td><%= employee.EmployeesNames %></td>
+                    <td><%= employee.formattedDate %></td>
                     <td><%= employee.Presence %></td>
-                    <td><%= employee.client %></td>
+                    <td><%= employee.statut %></td>
                     <td><%= employee.activity %></td>
                     <td><%= employee.ProblèmeRencontré %></td>
-                    <td><%= employee.statut %></td>
+                    <td><%= employee.client %></td>
                     <td><%= employee.Fournisseur %></td>
-                    <td><%= employee.formattedDate %></td>
+                    <td><%= employee.PresenceEnJourne %></td>
+                    
                 </tr>
                 <% }) %>
 
