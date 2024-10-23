@@ -72,9 +72,9 @@
                     <%})  %> 
                 </select>
                 <br>
-                <label >  Présence en journée (heure) </label>
+                 <h5>Présence en journée (heure) </h5> 
                 <br>
-                <label for="PresenceEnMatine">La matinée : </label>
+                <label id="table-label" for="PresenceEnMatine">La matinée : </label>
                 <input type="number" name="PresenceEnMatine" id="PresenceEnMatine" min="0" max="6">
                 <label id="table-label" for="client">Nom de client (matinée): </label>
                 <br>
@@ -85,7 +85,7 @@
                 </select><br>
 
 
-                <label for="PresenceEnAprèsMidi">En après-midi : </label>
+                <label id="table-label"  for="PresenceEnAprèsMidi">En après-midi : </label>
                 <input type="number" name="PresenceEnAprèsMidi" id="PresenceEnAprèsMidi" min="0" max="6">
                 <br>
                 <label id="table-label" for="client">Nom de client (après-midi): </label>
@@ -103,7 +103,7 @@
 
 
                 <label id="table-label" for="comment">Écris un commentaire :</label>
-                <input id="comment" type="text" placeholder="Écris ton commentaire ici ...." name="comment">
+                <input id="comment" type="text" placeholder="Laisser ton commentaire ici ...." name="comment">
 
                 <button type="submit">Submit</button>
             </form>
