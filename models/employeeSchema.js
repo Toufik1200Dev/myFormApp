@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const EmployeeSchema = new Schema({
     EmployeesNames : String,
     Presence: String,
-    client :String,
+    clientDuMatin :String,
+    clientApresMidi : String,
     activity : String,
     ProblèmeRencontré : String,
     statut : String,
@@ -12,7 +13,8 @@ const EmployeeSchema = new Schema({
     formattedDate : String,
     Opportunité : String,
     opportunityDetails: String,
-    PresenceEnJourne : Number,
+    PresenceEnMatine : Number,
+    PresenceEnAprèsMidi : Number,
     comment: String
 });
 

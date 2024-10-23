@@ -1,7 +1,7 @@
 const EmployeesNames = [
     "Amine",'Bader' ,'Béatrice' ,'Fodé' ,'Fortuney' ,
     'Hichem','Laurent','Masika', 'Najm',   
-    'Sonia' ,'Patrice' ,'william',"Adam"
+    'Sonia' ,'Patrice' ,'william',"Adam","Nadège"
 ];
 
 const Presence = [
@@ -36,13 +36,10 @@ const ProblèmeRencontré = [
     "problèmes d'intégration  systeme", "problème de cordination avec l'équipe technique"
 ];
 
-const PresenceEnJourne = Number;
-
 const statut = [
     "fait", "En cours", "Non démarré", "En attente de validation ", "Reporté", "Annulé"
 ];
 
-const Opportunite = [];
 
 const  Fournisseur = [
     "accuver","ericsson","amdocs", "narda", "pctel", "alpha wave","pas de fournisseur"

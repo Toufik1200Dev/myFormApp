@@ -32,7 +32,8 @@ app.post('/app.js', async (req,res)=>{
         const newEmployee =new EmployeeDetails({
             EmployeesNames : req.body.Employe,
             Presence: req.body.presence,
-            client : req.body.client,
+            clientDuMatin : req.body.clientDuMatin,
+            clientApresMidi : req.body.clientApresMidi,
             activity : req.body.activity,
             ProblèmeRencontré : req.body.Probleme,
             statut : req.body.statut,
@@ -40,7 +41,8 @@ app.post('/app.js', async (req,res)=>{
             formattedDate : data.formattedDate,
             Opportunité : req.body.Opportunité,
             opportunityDetails: req.body.opportunityDetails,
-            PresenceEnJourne : req.body.PresenceEnJourne,
+            PresenceEnMatine : req.body.PresenceEnMatine,
+            PresenceEnAprèsMidi : req.body.PresenceEnAprèsMidi,
             comment : req.body.comment
         }) 
         await newEmployee.save();

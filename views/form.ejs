@@ -64,14 +64,6 @@
                     <%})  %> 
                 </select><br>
 
-                <label id="table-label" for="client">Nom de client : </label>
-                <br>
-                <select name="client" id="client" >    
-                    <%data.client.forEach((name)=>{%>
-                    <option value="<%= name  %>"><%= name %></option>  
-                    <%})  %> 
-                </select><br>
-
                 <label id="table-label" for="Fournisseur"> Fournisseur : </label>
                 <br>
                 <select name="Fournisseur" id="Fournisseur" >    
@@ -80,9 +72,36 @@
                     <%})  %> 
                 </select>
                 <br>
-                <label id="table-label" for="PresenceEnJourne">Présence en journée (heure) : </label>
-                <input type="number" name="PresenceEnJourne" min="0" max="12">
+                <label >  Présence en journée (heure) </label>
                 <br>
+                <label for="PresenceEnMatine">La matinée : </label>
+                <input type="number" name="PresenceEnMatine" id="PresenceEnMatine" min="0" max="6">
+                <label id="table-label" for="client">Nom de client (matinée): </label>
+                <br>
+                <select name="clientDuMatin" id="clientDuMatin" >    
+                    <%data.client.forEach((name)=>{%>
+                    <option value="<%= name  %>"><%= name %></option>  
+                    <%})  %> 
+                </select><br>
+
+
+                <label for="PresenceEnAprèsMidi">En après-midi : </label>
+                <input type="number" name="PresenceEnAprèsMidi" id="PresenceEnAprèsMidi" min="0" max="6">
+                <br>
+                <label id="table-label" for="client">Nom de client (après-midi): </label>
+                <br>
+                <select name="clientApresMidi" id="clientApresMidi" >    
+                    <%data.client.forEach((name)=>{%>
+                    <option value="<%= name  %>"><%= name %></option>  
+                    <%})  %> 
+                </select><br>
+
+
+
+
+
+
+
                 <label id="table-label" for="comment">Écris un commentaire :</label>
                 <input id="comment" type="text" placeholder="Écris ton commentaire ici ...." name="comment">
 
@@ -101,10 +120,11 @@
                 <th>Status de travail</th>
                 <th>Activité</th>
                 <th>Problème Rencontré</th>
-                <th>client</th>
                 <th>Fournisseur</th>
-                <th>Présence en journée</th>
-                
+                <th>Présence la matinée</th>
+                <th>Client du matin</th>
+                <th>Présence en après-midi</th>
+                <th>Client après-midi</th>
             </tr>
             <% employees.forEach(employee => { %>
                 <tr>
@@ -114,9 +134,11 @@
                     <td><%= employee.statut %></td>
                     <td><%= employee.activity %></td>
                     <td><%= employee.ProblèmeRencontré %></td>
-                    <td><%= employee.client %></td>
                     <td><%= employee.Fournisseur %></td>
-                    <td><%= employee.PresenceEnJourne %></td>
+                    <td><%= employee.PresenceEnMatine %></td>
+                    <td><%= employee.clientDuMatin %></td>
+                    <td><%= employee.PresenceEnAprèsMidi %></td>
+                    <td><%= employee.clientApresMidi %></td>
                     
                 </tr>
                 <% }) %>
