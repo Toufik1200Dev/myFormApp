@@ -5,7 +5,7 @@ const data = require('./data.js');
 const EmployeeDetails = require('./models/employeeSchema.js')
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4152;
 const MONGO = process.env.MONGODB_URI || 'mongodb://localhost:27017/employeeDB';
 
 app.set('view engine', "ejs");
