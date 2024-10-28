@@ -15,7 +15,7 @@ const client = [
     "Orange Mali", "Gendarmerie", "AFD Tech", "ARCEP",
     "MWINGZ","Togocom","TechMahindra", "SFR","QOSI","Proximus",
     "Talent Group","Telecom Cameroun", "Mozark","Monaco Telecom",
-    "IMT Atlantique","Expresso Telecom","Accenture"
+    "IMT Atlantique","Expresso Telecom","Accenture", "DGA"
 ];
 
 const activity = [
@@ -24,7 +24,7 @@ const activity = [
     "Préparation des slides","Redaction des rapport","Redaction des ModOp", 
     "Analyse des resultats", "Reunion interne", "Cordination avec fournisseur",
     "Planification des tests", "Maintenance", "Formation", "Veille technologique",
-    "Audit interne/externe", 
+    "Audit interne/externe","livraison","inventaire", "suivi driver" 
 ];
 
 const ProblèmeRencontré = [
