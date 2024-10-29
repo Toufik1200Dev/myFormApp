@@ -62,6 +62,7 @@ app.post('/app.js', async (req,res)=>{
             console.log(req.body)
         }else{
             res.redirect("/")
+            res.send("Vous avez déjà soumis ce formulaire aujourd'hui")
         }    
     }catch (error) {
         console.log('Error saving employee data:', error);
