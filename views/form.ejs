@@ -106,8 +106,8 @@
             </div>  
         </div>
     </form>
-    <% const hasMatchingDate = employees.some(employee => employee.formattedDate === data.formattedDate); %>
-    <% if(hasMatchingDate){ %>
+    <% const todaysEmployees = employees.filter(employee => employee.formattedDate === data.formattedDate); %>
+    <% if (todaysEmployees.length > 0) { %>
         <div class="data-table">
         <table>
             <tr>
@@ -145,7 +145,7 @@
 
         </div>
     <%}else {%>
-        <h1 style="background-color: #009879; width:500;margin:auto;padding:10px;text-align: center;color:#fff">No one registered today </h1>
+        <h1 style="background-color: #009879; width:500;margin:auto;padding:10px;text-align: center;color:#fff; border-radius: 5px;">No one registered today </h1>
     <%} %>
 
     
