@@ -23,9 +23,10 @@ mongoose.connect(MONGO).then(()=>{
 
 
 app.get('/', async (req,res)=>{
-    
     try{ 
-        const employees = await EmployeeDetails.find();
+        const today = new Date();
+        const formattedToday = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+        const employees = await EmployeeDetails.find({ formattedDate: formattedToday });
         res.render("form", {data: data, employees}) 
         
     }catch (err) {
