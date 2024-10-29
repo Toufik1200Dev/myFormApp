@@ -53,7 +53,7 @@ const Fournisseur = [
 const today = new Date();
 const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
 
-const Opportunité = ["Opportunité", "pas d'opportunités"];
+const Opportunité = ["pas d'opportunités","Opportunité" ];
 
 const data = {
     EmployeesNames,

@@ -5,7 +5,7 @@ const data = require('./data.js');
 const EmployeeDetails = require('./models/employeeSchema.js')
 
 const app = express();
-const PORT = process.env.PORT || 4152;
+const PORT = process.env.PORT || 4160;
 const MONGO = process.env.MONGODB_URI || 'mongodb://localhost:27017/employeeDB';
 
 app.set('view engine', "ejs");
@@ -32,8 +32,8 @@ app.get('/', async (req,res)=>{
         res.status(500).send('Error fetching employee data');}
     
 });
-app.post('/app.js', async (req,res)=>{
-    
+app.post('/add-employee', async (req,res)=>{
+    console.log(req.body);
     try{
         const UserExist = await EmployeeDetails.findOne({
             EmployeesNames : req.body.Employe,
