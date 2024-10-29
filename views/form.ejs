@@ -93,104 +93,106 @@
     </style>
 </head>
 <body>
+    <form action="app.js" method="post">
+        <div class="container">
+            <div class="text-center mb-4">
+                <img src="/LiliBelleLogo.png" alt="Lili Belle logo" style="height: 200px;">
+            </div>
+            <h3 class="text-center">La date d'aujourd'hui : <%= data.formattedDate %></h3>
+            
+            <div class="row mb-3">
+                <div class="col-md-3">
+                    <label id="table-label" for="Employe">collaborateur :</label>
+                    <select name="Employe" id="Employe" class="form-select">    
+                        <% data.EmployeesNames.forEach((name) => { %>
+                            <option value="<%= name %>"><%= name %></option>  
+                        <% }) %> 
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label id="table-label" for="presence">Ta présence :</label>
+                    <select name="presence" id="presence" class="form-select">    
+                        <% data.Presence.forEach((name) => { %>
+                            <option value="<%= name %>"><%= name %></option>  
+                        <% }) %> 
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label id="table-label" for="statut">Statut :</label>
+                    <select name="statut" id="statut" class="form-select">    
+                        <% data.statut.forEach((name) => { %>
+                            <option value="<%= name %>"><%= name %></option>  
+                        <% }) %> 
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <label id="table-label" for="Fournisseur">Fournisseur :</label>
+                    <select name="Fournisseur" id="Fournisseur" class="form-select">    
+                        <% data.Fournisseur.forEach((name) => { %>
+                            <option value="<%= name %>"><%= name %></option>  
+                        <% }) %> 
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label id="table-label" for="activity">Ton activité actuelle :</label>
+                    <select name="activity" id="activity" class="form-select">    
+                        <% data.activity.forEach((name) => { %>
+                            <option value="<%= name %>"><%= name %></option>  
+                        <% }) %> 
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label id="table-label" for="Opportunité">Opportunité :</label>
+                    <select name="Opportunité" id="Opportunité" class="form-select">    
+                        <% data.Opportunité.forEach((name) => { %>
+                            <option value="<%= name %>"><%= name %></option>  
+                        <% }) %> 
+                    </select>
+                </div>
+            </div>
+
+            <h5>Présence en journée</h5>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label id="table-label" for="PresenceEnMatine">La matinée :</label>
+                    <input type="number" name="PresenceEnMatine" id="PresenceEnMatine" min="0" max="6" value="0" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label id="table-label" for="PresenceEnAprèsMidi">En après-midi :</label>
+                    <input type="number" name="PresenceEnAprèsMidi" id="PresenceEnAprèsMidi" min="0" max="6" value="0" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label id="table-label" for="clientDuMatin">Nom de client (matinée) :</label>
+                    <select name="clientDuMatin" id="clientDuMatin" class="form-select">    
+                        <% data.client.forEach((name) => { %>
+                            <option value="<%= name %>"><%= name %></option>  
+                        <% }) %> 
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label id="table-label" for="clientApresMidi">Nom de client (après-midi) :</label>
+                    <select name="clientApresMidi" id="clientApresMidi" class="form-select">    
+                        <% data.client.forEach((name) => { %>
+                            <option value="<%= name %>"><%= name %></option>  
+                        <% }) %> 
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label id="table-label" for="comment">Écris un commentaire :</label>
+                <input id="comment" type="text" placeholder="Laisse ton commentaire ici..." name="comment" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
     
-    <div class="container">
-        <div class="text-center mb-4">
-            <img src="/LiliBelleLogo.png" alt="Lili Belle logo" style="height: 200px;">
-        </div>
-        <h3 class="text-center">La date d'aujourd'hui : <%= data.formattedDate %></h3>
-        
-        <div class="row mb-3">
-            <div class="col-md-3">
-                <label id="table-label" for="Employe">collaborateur :</label>
-                <select name="Employe" id="Employe" class="form-select">    
-                    <% data.EmployeesNames.forEach((name) => { %>
-                        <option value="<%= name %>"><%= name %></option>  
-                    <% }) %> 
-                </select>
-            </div>
-            <div class="col-md-3">
-                <label id="table-label" for="presence">Ta présence :</label>
-                <select name="presence" id="presence" class="form-select">    
-                    <% data.Presence.forEach((name) => { %>
-                        <option value="<%= name %>"><%= name %></option>  
-                    <% }) %> 
-                </select>
-            </div>
-            <div class="col-md-3">
-                <label id="table-label" for="statut">Statut :</label>
-                <select name="statut" id="statut" class="form-select">    
-                    <% data.statut.forEach((name) => { %>
-                        <option value="<%= name %>"><%= name %></option>  
-                    <% }) %> 
-                </select>
-            </div>
-            <div class="col-md-3">
-                <label id="table-label" for="Fournisseur">Fournisseur :</label>
-                <select name="Fournisseur" id="Fournisseur" class="form-select">    
-                    <% data.Fournisseur.forEach((name) => { %>
-                        <option value="<%= name %>"><%= name %></option>  
-                    <% }) %> 
-                </select>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label id="table-label" for="activity">Ton activité actuelle :</label>
-                <select name="activity" id="activity" class="form-select">    
-                    <% data.activity.forEach((name) => { %>
-                        <option value="<%= name %>"><%= name %></option>  
-                    <% }) %> 
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label id="table-label" for="Opportunité">Opportunité :</label>
-                <select name="Opportunité" id="Opportunité" class="form-select">    
-                    <% data.Opportunité.forEach((name) => { %>
-                        <option value="<%= name %>"><%= name %></option>  
-                    <% }) %> 
-                </select>
-            </div>
-        </div>
-
-        <h5>Présence en journée</h5>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label id="table-label" for="PresenceEnMatine">La matinée :</label>
-                <input type="number" name="PresenceEnMatine" id="PresenceEnMatine" min="0" max="6" value="0" class="form-control">
-            </div>
-            <div class="col-md-6">
-                <label id="table-label" for="PresenceEnAprèsMidi">En après-midi :</label>
-                <input type="number" name="PresenceEnAprèsMidi" id="PresenceEnAprèsMidi" min="0" max="6" value="0" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-6">
-                <label id="table-label" for="clientDuMatin">Nom de client (matinée) :</label>
-                <select name="clientDuMatin" id="clientDuMatin" class="form-select">    
-                    <% data.client.forEach((name) => { %>
-                        <option value="<%= name %>"><%= name %></option>  
-                    <% }) %> 
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label id="table-label" for="clientApresMidi">Nom de client (après-midi) :</label>
-                <select name="clientApresMidi" id="clientApresMidi" class="form-select">    
-                    <% data.client.forEach((name) => { %>
-                        <option value="<%= name %>"><%= name %></option>  
-                    <% }) %> 
-                </select>
-            </div>
-        </div>
-
-        <div class="mb-3">
-            <label id="table-label" for="comment">Écris un commentaire :</label>
-            <input id="comment" type="text" placeholder="Laisse ton commentaire ici..." name="comment" class="form-control">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
 
     <% const hasMatchingDate = employees.some(employee => employee.formattedDate === data.formattedDate); %>
     <% if (hasMatchingDate) { %>
