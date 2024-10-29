@@ -5,7 +5,7 @@ const data = require('./data.js');
 const EmployeeDetails = require('./models/employeeSchema.js')
 
 const app = express();
-const PORT = process.env.PORT || 4160;
+const PORT = process.env.PORT || 4161;
 const MONGO = process.env.MONGODB_URI || 'mongodb://localhost:27017/employeeDB';
 
 app.set('view engine', "ejs");
@@ -62,7 +62,7 @@ app.post('/add-employee', async (req,res)=>{
             console.log(req.body)
         }else{
             res.redirect("/")
-            res.send("Vous avez déjà soumis ce formulaire aujourd'hui")
+            
         }    
     }catch (error) {
         console.log('Error saving employee data:', error);
