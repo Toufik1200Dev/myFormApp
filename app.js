@@ -18,36 +18,51 @@ mongoose.connect(MONGO).then(()=>{
     
 }).catch(err=>console.log(err));
 
+
 /////
+
+
 app.get('/', async (req,res)=>{
-    try{
+    
+    try{ 
         const employees = await EmployeeDetails.find();
-        res.render("form", {data: data, employees})
+        res.render("form", {data: data, employees}) 
+        
     }catch (err) {
-        res.status(500).send('Error fetching employee data');
-    }
+        res.status(500).send('Error fetching employee data');}
+    
 });
 app.post('/app.js', async (req,res)=>{
+    
     try{
-        const newEmployee =new EmployeeDetails({
+        const UserExist = await EmployeeDetails.findOne({
             EmployeesNames : req.body.Employe,
-            Presence: req.body.presence,
-            clientDuMatin : req.body.clientDuMatin,
-            clientApresMidi : req.body.clientApresMidi,
-            activity : req.body.activity,
-            ProblèmeRencontré : req.body.Probleme,
-            statut : req.body.statut,
-            Fournisseur : req.body.Fournisseur,
-            formattedDate : data.formattedDate,
-            Opportunité : req.body.Opportunité,
-            opportunityDetails: req.body.opportunityDetails,
-            PresenceEnMatine : req.body.PresenceEnMatine,
-            PresenceEnAprèsMidi : req.body.PresenceEnAprèsMidi,
-            comment : req.body.comment
-        }) 
-        await newEmployee.save();
-        res.render("successPage")
-        console.log(req.body)
+            formattedDate : data.formattedDate 
+        });
+        if(!UserExist){      
+            const newEmployee =new EmployeeDetails({
+                EmployeesNames : req.body.Employe,
+                Presence: req.body.presence,
+                clientDuMatin : req.body.clientDuMatin,
+                clientApresMidi : req.body.clientApresMidi,
+                activity : req.body.activity,
+                ProblèmeRencontré : req.body.Probleme,
+                statut : req.body.statut,
+                Fournisseur : req.body.Fournisseur,
+                formattedDate : data.formattedDate,
+                Opportunité : req.body.Opportunité,
+                opportunityDetails: req.body.opportunityDetails,
+                PresenceEnMatine : req.body.PresenceEnMatine,
+                PresenceEnAprèsMidi : req.body.PresenceEnAprèsMidi,
+                comment : req.body.comment
+            })
+    
+            await newEmployee.save();
+            res.redirect('/');
+            console.log(req.body)
+        }else{
+            res.redirect("/")
+        }    
     }catch (error) {
         console.log('Error saving employee data:', error);
         res.status(500).send('Error saving employee data.');
@@ -57,4 +72,3 @@ app.post('/app.js', async (req,res)=>{
 app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on: http://localhost:${PORT}/`);
   });
-
